@@ -1,59 +1,132 @@
-# 101410156Comp3133Assignment2
+# 🧑‍💼 Employee Management System (COMP3133)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.6.
+A full-stack Employee Management System built using:
 
-## Development server
+- 🌐 **Angular** (Standalone Components, Material UI, Apollo Client)
+- 🚀 **Node.js + Express** backend with **GraphQL**
+- 🛢️ **MongoDB Atlas** for data storage
+- 🔐 JWT-based Authentication
+- 📦 Deployed on **Vercel**
 
-To start a local development server, run:
+---
+
+
+## 🚀 Live Demo
+
+| Platform | Link |
+|---------|------|
+| 🔧 Frontend | https://101410156-comp3133-assig2.vercel.app/login |
+| 📡 Backend |  |
+
+---
+
+## 🔐 Features
+
+- ✅ User Signup & Login (JWT authentication)
+- 📋 Add, View, Update, Delete Employees
+- 🔍 Search by Department / Designation
+- 🧠 GraphQL API with queries & mutations
+- 🧪 Tested using Postman
+- 🎨 Angular Material UI
+
+---
+
+## 📦 Installation
+
+### 🖥️ Backend
 
 ```bash
+cd backend
+npm install
+```
+
+> Create a `.env` file:
+
+```env
+MONGO_URI=your_mongo_connection_string
+JWT_SECRET=your_secret_key
+```
+
+```bash
+node server.js
+```
+
+### 🌐 Frontend
+
+```bash
+cd frontend
+npm install
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## 🧪 GraphQL API Testing (Postman)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### 🛠 Setup
+- Endpoint: `http://localhost:5000/graphql`
+- Method: `POST`
+- Headers:
+  ```
+  Content-Type: application/json
+  ```
 
-```bash
-ng generate component component-name
+### ✅ Examples
+
+#### ➕ Signup
+```json
+{
+  "query": "mutation { signup(username: \"user1\", email: \"user1@example.com\", password: \"password123\") { id username email } }"
+}
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
+#### 🔐 Login
+```json
+{
+  "query": "query { login(email: \"user1@example.com\", password: \"password123\") { id email token } }"
+}
 ```
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
+#### ➕ Add Employee
+```json
+{
+  "query": "mutation { addEmployee(first_name: \"Johnny\", last_name: \"Liver\", email: \"johnny1@example.com\", gender: \"Male\", designation: \"Developer\", salary: 5000, date_of_joining: \"2024-05-01\", department: \"IT\") { id first_name } }"
+}
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
+#### ❌ Error Example (Missing Field)
+```json
+{
+  "query": "mutation { addEmployee(first_name: \"John\") { id } }"
+}
 ```
 
-## Running end-to-end tests
+## Screenshots
 
-For end-to-end (e2e) testing, run:
+![image](https://github.com/user-attachments/assets/5256c7d5-449c-4645-948a-fc35a6f012c8)
+![image](https://github.com/user-attachments/assets/1cc1b730-1613-4a91-a242-abdb053dd75e)
 
-```bash
-ng e2e
-```
+![image](https://github.com/user-attachments/assets/20737d66-3c77-4f77-9a22-c80d0375cf48)
+![image](https://github.com/user-attachments/assets/c30877d6-feef-46ae-88ed-3ccae7c01e6d)
+![image](https://github.com/user-attachments/assets/cb98f0f2-2175-4694-9fae-feb9cc54d37a)
+![image](https://github.com/user-attachments/assets/64591e46-5660-4f9a-89f8-15328f34e130)
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
-## Additional Resources
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+
+
+
+
+
+## 🧑‍🎓 Author
+
+**Pratham Bavlawala**  
+Student ID: `101410156`  
+COMP3133 - Web Frameworks
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License.
