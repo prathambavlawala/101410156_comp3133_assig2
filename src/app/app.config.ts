@@ -30,7 +30,7 @@ export const appConfig: ApplicationConfig = {
       const httpLink = inject(HttpLink);
       return {
         cache: new InMemoryCache(),
-        link: httpLink.create({ uri: 'https://pratham-comp3133-101410156-assignment1.onrender.com/' })
+        link: httpLink.create({ uri: 'https://pratham-comp3133-101410156-assignment1.onrender.com/graphql' })
       };
     })
   ]
