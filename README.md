@@ -16,7 +16,7 @@ A full-stack Employee Management System built using:
 | Platform | Link |
 |---------|------|
 | 🔧 Frontend | https://101410156-comp3133-assig2.vercel.app/login |
-| 📡 Backend |  |
+| 📡 Backend | https://pratham-comp3133-101410156-assignment1.onrender.com/ |
 
 ---
 
