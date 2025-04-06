@@ -1,0 +1,31 @@
+.full-width-table {
+    width: 100%;
+    margin-top: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+  }
+  
+  .mat-header-cell, .mat-cell {
+    padding: 12px;
+    font-size: 14px;
+  }
+  
+  .d-flex {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  
+  .gap-2 {
+    gap: 0.5rem;
+  }
+  
+  .text-primary {
+    color: #3f51b5;
+  }
+  
+  .text-muted {
+    color: #888;
+  }
+  

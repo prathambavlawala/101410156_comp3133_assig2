@@ -1,0 +1,54 @@
+<div class="container mt-4">
+  <h2 class="text-center mb-4 text-primary">Employees List</h2>
+
+  <div class="text-end mb-3">
+    <button mat-raised-button color="primary" (click)="onAddEmployee()">
+       Add Employee
+    </button>
+  </div>
+
+  <table mat-table [dataSource]="employees" class="mat-elevation-z8 full-width-table" *ngIf="employees.length > 0; else noData">
+    
+    <!-- First Name Column -->
+    <ng-container matColumnDef="first_name">
+      <th mat-header-cell *matHeaderCellDef>First Name</th>
+      <td mat-cell *matCellDef="let employee">{{ employee.first_name }}</td>
+    </ng-container>
+
+    <!-- Last Name Column -->
+    <ng-container matColumnDef="last_name">
+      <th mat-header-cell *matHeaderCellDef>Last Name</th>
+      <td mat-cell *matCellDef="let employee">{{ employee.last_name }}</td>
+    </ng-container>
+
+    <!-- Email Column -->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef>Email</th>
+      <td mat-cell *matCellDef="let employee">{{ employee.email }}</td>
+    </ng-container>
+
+    <!-- Actions Column -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let employee" class="d-flex gap-2">
+        <button mat-flat-button color="primary" (click)="onView(employee)">
+           View
+        </button>
+        <button mat-flat-button color="accent" (click)="onEdit(employee)">
+           Update
+        </button>
+        <button mat-flat-button color="warn" (click)="onDelete(employee)">
+           Delete
+        </button>
+      </td>
+    </ng-container>
+
+    <!-- Header and Row Bindings -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <ng-template #noData>
+    <p class="text-center mt-4 text-muted">No employees found.</p>
+  </ng-template>
+</div>
